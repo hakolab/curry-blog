@@ -3,9 +3,9 @@ import { useRouter } from 'next/router'
 
 import { NEXT_PUBLIC_URL } from '../lib/notion/server-constants'
 
-export const SITE_TITLE = 'easy-notion-blog'
+export const SITE_TITLE = '週末カレー旅'
 export const SITE_DESCRIPTION =
-  'Easy to start your blog. You can write on your Notion.'
+  '好物のカレーを楽しむ記録'
 
 const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
   const { asPath } = useRouter()

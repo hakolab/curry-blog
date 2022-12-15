@@ -124,6 +124,7 @@ interface Equation {
 
 interface Cover {
   type: string
+  file?: File
   external?: External
 }
 

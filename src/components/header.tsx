@@ -19,11 +19,11 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <h1>
+      <div className={styles.logo}>
         <Link href="/" passHref>
           <a>{SITE_TITLE}</a>
         </Link>
-      </h1>
+      </div>
 
       <ul>
         {navItems.map(({ label, path }) => (

@@ -1,21 +1,25 @@
 .header {
   display: block;
-  padding: 15px 0;
-  text-align: center;
+  padding: 15px 0 0;
+  text-align: left;
+  background-color: #F2CC8F;
 }
-.header h1 {
-  padding: 0.5rem 0;
-  font-weight: 400;
-  color: #000;
+.header div.logo {
+  padding: 0.5rem 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #3D405B;
+  text-align: left;
 }
-.header h1 a {
+.header div.logo a {
   color: inherit;
 }
 .header ul {
   list-style: none;
   margin: inherit;
-  padding: 0.5rem 0;
-  font-size: 1.1rem;
+  padding: 0 1rem 0;
+  font-size: 1rem;
+
 }
 @media (max-width: 600px) {
   .header ul {
@@ -25,6 +29,7 @@
 .header ul li {
   display: inline-block;
   padding: 0 15px;
+  color: #E07A5F;
 }
 .header ul li :global(a.active) {
   color: var(--accents-3);

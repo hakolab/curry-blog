@@ -12,7 +12,8 @@ import {
   PostTags,
   PostTitle,
   PostsNotFound,
-  ReadMoreLink,
+  PostCard,
+  PostCover,
 } from '../../../components/blog-parts'
 import styles from '../../../styles/blog.module.css'
 import { getTagLink } from '../../../lib/blog-helpers'
@@ -24,6 +25,7 @@ import {
   getFirstPostByTag,
   getAllTags,
 } from '../../../lib/notion/client'
+import * as Labels from '../../../constants/labels'
 
 export async function getStaticProps({ params: { tag } }) {
   const posts = await getPostsByTag(tag, NUMBER_OF_POSTS_PER_PAGE)
@@ -94,20 +96,22 @@ const RenderPostsByTags = ({
 
       <div className={styles.mainContent}>
         <header>
-          <h2>{tag}</h2>
+          <h2>「{tag}」の記事一覧</h2>
         </header>
 
         <NoContents contents={posts} />
 
         {posts.map(post => {
           return (
-            <div className={styles.post} key={post.Slug}>
-              <PostDate post={post} />
-              <PostTags post={post} />
-              <PostTitle post={post} />
-              <PostExcerpt post={post} />
-              <ReadMoreLink post={post} />
-            </div>
+            <PostCard post={post} key={post.Slug}>
+              <div className={styles.card}>
+                <PostCover post={post} />
+                <PostTitle post={post} />
+                <PostDate post={post} />
+                <PostTags post={post} />
+                <PostExcerpt post={post} />
+              </div>
+            </PostCard>
           )
         })}
 
@@ -117,9 +121,9 @@ const RenderPostsByTags = ({
       </div>
 
       <div className={styles.subContent}>
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
-        <BlogPostLink heading="Latest Posts" posts={recentPosts} />
-        <BlogTagLink heading="Categories" tags={tags} />
+        <BlogPostLink heading={Labels.RecommendedPosts} posts={rankedPosts} />
+        <BlogPostLink heading={Labels.LatestPosts} posts={recentPosts} />
+        <BlogTagLink heading={Labels.Tag} tags={tags} />
       </div>
     </div>
   )

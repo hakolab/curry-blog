@@ -4,11 +4,12 @@ import {
   BlogTagLink,
   NextPageLink,
   NoContents,
+  PostCard,
+  PostCover,
   PostDate,
   PostExcerpt,
   PostTags,
   PostTitle,
-  ReadMoreLink,
 } from '../../components/blog-parts'
 import styles from '../../styles/blog.module.css'
 import {
@@ -17,6 +18,7 @@ import {
   getRankedPosts,
   getAllTags,
 } from '../../lib/notion/client'
+import * as Labels from '../../constants/labels'
 
 export async function getStaticProps() {
   const [posts, firstPost, rankedPosts, tags] = await Promise.all([
@@ -52,13 +54,15 @@ const RenderPosts = ({
 
         {posts.map(post => {
           return (
-            <div className={styles.post} key={post.Slug}>
-              <PostDate post={post} />
-              <PostTags post={post} />
-              <PostTitle post={post} />
-              <PostExcerpt post={post} />
-              <ReadMoreLink post={post} />
-            </div>
+            <PostCard post={post} key={post.Slug}>
+              <div className={styles.card}>
+                <PostCover post={post} />
+                <PostTitle post={post} />
+                <PostDate post={post} />
+                <PostTags post={post} />
+                <PostExcerpt post={post} />
+              </div>
+            </PostCard>
           )
         })}
 
@@ -68,8 +72,8 @@ const RenderPosts = ({
       </div>
 
       <div className={styles.subContent}>
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
-        <BlogTagLink heading="Categories" tags={tags} />
+        <BlogPostLink heading={Labels.RecommendedPosts} posts={rankedPosts} />
+        <BlogTagLink heading={Labels.Tag} tags={tags} />
       </div>
     </div>
   )

@@ -9,16 +9,20 @@
 }
 
 .mainContent {
-  width: 60%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
-@media (max-width: 600px) {
+/*@media (max-width: 600px) {
   .mainContent {
     width: 100%;
   }
-}
+}*/
 .mainContent header {
-  padding: 0 0 20px;
-  text-align: center;
+  margin: 0 3% 0;
+  padding: 10px 10px 0;
+  text-align: left;
+  width: 100%;
 }
 .mainContent footer {
   border-top: 1px dashed #888;
@@ -40,8 +44,26 @@
   }
 }
 
+.card {
+  margin: 20px 3%;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 44%;
+  cursor: pointer;
+}
+@media (max-width: 960px) {
+  .card {
+    width: 100%;
+  }
+}
+
 .post {
-  margin: 0 auto 40px;
+  margin: 20px 3%;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
 }
 .post :global(h3) {
   margin: 0;

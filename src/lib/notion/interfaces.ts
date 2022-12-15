@@ -7,6 +7,7 @@ export interface Post {
   Excerpt: string
   OGImage: string
   Rank: number
+  Cover?: string
 }
 
 export interface Block {

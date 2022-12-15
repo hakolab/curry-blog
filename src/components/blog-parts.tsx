@@ -11,6 +11,23 @@ import {
   getTagBeforeLink,
 } from '../lib/blog-helpers'
 import styles from '../styles/blog-parts.module.css'
+import Image from "next/image";
+
+export const PostCard = ({ post, children }) => {
+  return (
+    <Link href="/blog/[slug]" as={getBlogLink(post.Slug)} passHref>
+      {children}
+    </Link>
+  )
+}
+
+export const PostCover = ({ post }) => {
+  return (
+    <div className={styles.postCover}>
+      <Image src={post.Cover} objectFit={"cover"} width={400} height={225}/>
+    </div>
+  )
+}
 
 export const PostDate = ({ post }) => (
   <div className={styles.postDate}>
@@ -72,6 +89,11 @@ export const NextPageLink = ({ firstPost, posts, tag = '' }) => {
 
   const lastPost = posts[posts.length - 1]
 
+  console.log('first')
+  console.log(firstPost)
+
+  console.log('last')
+  console.log(lastPost)
   if (firstPost.Date === lastPost.Date) return null
 
   return (

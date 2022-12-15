@@ -5,8 +5,14 @@
 }
 
 .container > div {
+  margin-top: 1rem;
   margin-bottom: 40px;
 }
+
+.container > div.thanks p {
+  font-size: 0.8rem;
+}
+
 .container div:last-child {
   margin-bottom: 0;
 }

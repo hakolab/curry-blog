@@ -1,3 +1,7 @@
+.postCover {
+  text-align: center;
+}
+
 .postDate {
   padding: 0 0 0.3rem;
   font-size: 0.9rem;
@@ -11,21 +15,21 @@
 }
 
 .postTitle {
-  font-size: 1.6rem;
+  font-size: 2.5rem;
   color: var(--fg);
 }
 @media (max-width: 600px) {
   .postTitle {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 .postTitle a {
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: inherit;
 }
 @media (max-width: 600px) {
   .postTitle a {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -80,6 +84,10 @@
 }
 
 .blogPostLink {
+  margin: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
 }
 .blogPostLink h3 {
   margin: 0;
@@ -110,6 +118,10 @@
 }
 
 .blogTagLink {
+  margin: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
 }
 .blogTagLink h3 {
   margin: 0;

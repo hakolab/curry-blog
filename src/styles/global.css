@@ -4,10 +4,17 @@
   --gap: 1rem;
   --gap-double: 2rem;
 
-  --bg: #fff;
-  --fg: #333;
-  --accents-1: #0070f3;
-  --accents-2: #3291ff;
+  /*
+  main color theme
+  https://colors.dopely.top/palettes/koARyEb9OHC
+
+  sub color theme
+  https://colors.dopely.top/palettes/7NkwMgfCgQ5
+  */
+  --bg: #F4F1DE;
+  --fg: #3D405B;
+  --accents-1: #CC3F31;
+  --accents-2: #E0877F;
   --accents-3: #666;
   --geist-foreground: #000;
   --geist-success: #690;

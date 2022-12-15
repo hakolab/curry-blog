@@ -7,14 +7,18 @@ const RenderPage = () => (
     <DocumentHead />
 
     <div>
-      <h2>Welcome!</h2>
-      <p>Your easy-notion-blog deployed successfully!</p>
-      <p>Have fun!</p>
+      <h2>はこだてたろうのカレーを楽しむブログ</h2>
+      <p>「カレー食べたい」が口ぐせのはこだてたろうのブログです。</p>
+      <p>週末はおいしいカレーを求めて街にくりだします。</p>
+      <p>このブログでは、いただいたカレーを紹介させていただきます。</p>
+    </div>
+    <div className={styles.thanks}>
       <p>
-        easy-notion-blog powered by{' '}
+        このブログは、
         <ExtLink href="https://github.com/otoyo/easy-notion-blog">
-          otoyo/easy-notion-blog
+            otoyo/easy-notion-blog
         </ExtLink>
+        {' '}を使って制作しています。
       </p>
     </div>
   </div>

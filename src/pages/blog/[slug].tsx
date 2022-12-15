@@ -28,6 +28,7 @@ import {
   getAllTags,
   getAllBlocksByBlockId,
 } from '../../lib/notion/client'
+import * as Labels from '../../constants/labels'
 
 export async function getStaticProps({ params: { slug } }) {
   const post = await getPostBySlug(slug)
@@ -154,12 +155,12 @@ const RenderPost = ({
 
       <div className={styles.subContent}>
         <BlogPostLink
-          heading="Posts in the same category"
+          heading={Labels.PostsInTheSameCategory}
           posts={sameTagPosts}
         />
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
-        <BlogPostLink heading="Latest posts" posts={recentPosts} />
-        <BlogTagLink heading="Categories" tags={tags} />
+        <BlogPostLink heading={Labels.RecommendedPosts} posts={rankedPosts} />
+        <BlogPostLink heading={Labels.LatestPosts} posts={recentPosts} />
+        <BlogTagLink heading={Labels.Tag} tags={tags} />
       </div>
     </div>
   )

@@ -785,6 +785,7 @@ function _buildPost(pageObject: responses.PageObject): Post {
     OGImage:
       prop.OGImage.files.length > 0 ? prop.OGImage.files[0].file.url : null,
     Rank: prop.Rank.number,
+    Cover: _getCover(pageObject.cover)
   }
 
   return post
@@ -826,4 +827,10 @@ function _buildRichText(richTextObject: responses.RichTextObject): RichText {
   }
 
   return richText
+}
+
+function _getCover(cover: responses.PageObject["cover"]) {
+  if (cover && cover.file) return cover.file.url
+  if (cover && cover.external) return cover.external.url
+  return '/default.png'
 }
